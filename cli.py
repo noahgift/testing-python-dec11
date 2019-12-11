@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 import click
-import glob
 from mylib import lib
 
 

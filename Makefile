@@ -12,7 +12,7 @@ install:
 		pip install -r requirements.txt
 
 lint:
-	pylint --disable=R,C mylib
+	pylint --disable=R,C mylib cli scli
 
 flakeit:
 	flake8 mylib
@@ -21,6 +21,6 @@ reformat:
 	black cli.py mylib/lib.py
 
 test:
-	python -m pytest -vv --cov=mylib --cov=cli tests/*.py
+	python -m pytest -vv --cov=mylib --cov=cli --cov=scli tests/*.py
 
 all: install flakeit lint test
