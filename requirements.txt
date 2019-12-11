@@ -3,3 +3,5 @@ pylint
 jupyter
 pytest-cov
 click
+flake8
+black

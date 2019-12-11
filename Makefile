@@ -14,7 +14,13 @@ install:
 lint:
 	pylint --disable=R,C mylib
 
-test:
-	python -m pytest -vv --cov=mylib tests/*.py
+flakeit:
+	flake8 mylib
 
-all: install lint test
+reformat:
+	black cli.py mylib/lib.py
+
+test:
+	python -m pytest -vv --cov=mylib --cov=cli tests/*.py
+
+all: install flakeit lint test
