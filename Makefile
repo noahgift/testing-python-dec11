@@ -11,7 +11,10 @@ install:
 	pip install --upgrade pip &&\
 		pip install -r requirements.txt
 
+lint:
+	pylint --disable=R,C mylib
+
 test:
 	python -m pytest -vv --cov=mylib tests/*.py
 
-all: install test
+all: install lint test
